@@ -33,7 +33,6 @@ def load_custom_model(model_path):
     return model
 
 
-
 def import_and_predict(image_data, model):
     size = (256, 256)
     image = ImageOps.fit(image_data, size, Image.LANCZOS)
@@ -44,12 +43,11 @@ def import_and_predict(image_data, model):
     return prediction
 
 
-
 # Define model paths for different plant types
 model_paths = {
-    "tomato": './model/Tomato_Model.h5',
-    "cotton": './model/Cotton_Model.h5',
-    "potato": './model/Potato_Model.h5',
+    "tomato": "./model/Tomato_Model.h5",
+    "cotton": "./model/Cotton_Model.h5",
+    "potato": "./model/Potato_Model.h5",
 }
 
 # Load default model for initialization
@@ -63,12 +61,12 @@ class_names = {
         0: "diseased cotton leaf", 
         1: "diseased cotton plant", 
         2: "fresh cotton leaf", 
-        3: "fresh cotton plant"
+        3: "fresh cotton plant",
     },
     "potato": {
         0: "Potato___Early_blight", 
         1: "Potato___Late_blight", 
-        2: "Potato___healthy"
+        2: "Potato___healthy",
     },
 }
 
