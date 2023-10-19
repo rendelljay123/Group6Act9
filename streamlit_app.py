@@ -1,6 +1,6 @@
 import streamlit as st
 import tensorflow as tf
-from keras.models import load_model
+from keras.models import load_model as keras_load_model
 import numpy as np
 from PIL import Image, ImageOps
 
@@ -27,7 +27,7 @@ body {
 # Apply CSS to Streamlit
 st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 
-def load_model(model_path):
+def load_custom_model(model_path):
     model = tf.keras.models.load_model(model_path)
     return model
 
@@ -49,7 +49,7 @@ model_paths = {
 
 # Load default model for initialization
 default_model_path = './model/Tomato_Model.h5'
-model = load_model(default_model_path)
+model = load_custom_model(default_model_path)
 
 # Define class labels for plant diseases
 class_names = {
@@ -57,7 +57,6 @@ class_names = {
     'cotton': {0: 'diseased cotton leaf', 1: 'diseased cotton plant', 2: 'fresh cotton leaf', 3: 'fresh cotton plant'},
     'potato': {0: 'Potato___Early_blight', 1: 'Potato___Late_blight', 2: 'Potato___healthy'}
 }
-
 
 st.write("# Plant Disease Detection")
 st.write("### CPE 019 - Emerging Technologies in CpE 3")
@@ -76,7 +75,7 @@ else:
         # Load the selected model based on the chosen plant type
         model_path = model_paths.get(plant_type)
         if model_path:
-            model = load_model(model_path)
+            model = load_custom_model(model_path)
         else:
             st.text("Invalid plant type")
 
@@ -100,4 +99,3 @@ else:
     except Exception as e:
         st.text("Error occurred while processing the image.")
         st.text(str(e))
-        
