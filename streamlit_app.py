@@ -92,7 +92,7 @@ disease_info = {
 
 st.write("# Plant Disease Detection")
 st.write("### CPE 028 - DevOps")
-st.write("Baltazar, Rendell Jay; Dalmacio, Andre Christian; Makiramdam, Releigh; Orbeta, John Mark; Co, Jericho")
+st.write("Baltazar, Rendell Jay; Dalmacio, Andre Christian; Makiramdam, Rileigh; Orbeta, John Mark; Co, Jericho")
 
 # Allow the user to select the plant type
 plant_type = st.selectbox("Select Plant Type", ("tomato", "cotton", "potato"))
