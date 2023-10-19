@@ -72,8 +72,8 @@ class_names = {
 # Define disease information for each plant type
 disease_info = {
     'tomato': {
-        'Tomato_Early_blight': "Early blight is a common fungal disease that affects tomato plants...",
-        'Tomato_Leaf_Mold': "Tomato leaf mold is a foliar disease that primarily affects the leaves...",
+        'Tomato_Early_blight': "Early blight is a common fungal disease that affects tomato plants. Early Blight typically starts as small, dark brown lesions with concentric rings on lower leaves...",
+        'Tomato_Leaf_Mold': "Tomato leaf mold is a foliar disease that primarily affects the leaves. Management of Leaf Mold involves maintaining proper air circulation and reducing humidity levels in greenhouses...",
         'Tomato_healthy': "Your tomato plant looks healthy!",
     },
     'cotton': {
@@ -83,9 +83,9 @@ disease_info = {
     'fresh cotton plant': "Your cotton plant appears healthy!",
     },
     'potato': {
-        'Potato___Early_blight': "Early blight in potatoes can cause dark lesions on leaves. The main factor behind it is the fungus Alternaria solani. Indications consist of compact, dark spots featuring concentric rings that might unite as the condition advances.",
-        'Potato___Late_blight': "Late blight is a serious disease of potato and tomato crops. Symptoms of late blight encompass moisture-laden lesions on leaves, which can swiftly expand and turn necrotic. Affected plants might emit an unpleasant odor.",
-        'Potato___healthy': "Your potato plant looks healthy! Sustain the well-being of your potato plants by following sound agricultural practices, including appropriate irrigation, fertilization, and vigilant observation for indications of pests or diseases. Routinely examine the leaves and administer organic fungicides.",
+        'Potato___Early_blight': "Early blight in potatoes can cause dark lesions on leaves. It is primarily caused by the fungus Alternaria solani. The symptoms include small, dark spots with concentric rings that may merge as the disease progresses. ",
+        'Potato___Late_blight': "Late blight is a serious disease of potato and tomato crops. Late blight symptoms include water-soaked lesions on leaves, which can rapidly enlarge and become necrotic. Infected plants may exhibit a foul odor.",
+        'Potato___healthy': "Your potato plant looks healthy! Maintain your potato plant's health by adhering to good agricultural practices, which involve proper irrigation, fertilization, and vigilant monitoring for signs of pests or diseases. Regularly inspect the foliage, apply organic fungicides.",
     }
 }
 
