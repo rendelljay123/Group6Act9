@@ -23,6 +23,7 @@ jobs:
       run: pip install -r requirements.txt  # Modify if needed
 
     - name: Check syntax
-      uses: python/mypy@v1
+      uses: ms-pyright/pyright@v0
       with:
-        args: --ignore-missing-imports .
+        args: check --outputjson .
+
