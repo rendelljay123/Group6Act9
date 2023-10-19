@@ -100,6 +100,9 @@ plant_type = st.selectbox("Select Plant Type", ("tomato", "cotton", "potato"))
 # Allow the user to upload an image
 file = st.file_uploader("Upload an image", type=["jpg", "png"])
 
+# Allow the user to input the name of the plant
+plant_name = st.text_input("Enter the name of your plant", "My Plant")
+
 if file is None:
     st.text("Please upload an image file")
 else:
@@ -127,6 +130,9 @@ else:
                     with st.expander("Learn More About the Disease"):
                         disease_description = disease_info.get(plant_type, {}).get(class_name, "No information available.")
                         st.write(disease_description)
+                        
+                    # Display the user's plant name
+                    st.write(f"Your {plant_type} plant named '{user_plant_name}'")
                 else:
                     st.text("Invalid class index")
             else:
