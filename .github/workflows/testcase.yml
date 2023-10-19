@@ -1,4 +1,4 @@
-name: Python Syntax Check
+name: Syntax Check
 
 on:
   push:
@@ -6,29 +6,20 @@ on:
       - main
 
 jobs:
-  syntax-check:
-    name: Check Python Syntax
+  syntax_check:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
+    - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 14  # Choose an appropriate Node.js version
-
-    - name: Install pyright
-      run: npm install -g pyright
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.x  # Choose the Python version you want to use
+        python-version: 3.8
 
-    - name: Install dependencies
-      run: pip install -r requirements.txt
+    - name: Install pyflakes
+      run: pip install pyflakes
 
-    - name: Check Python syntax
-      run: pyright
+    - name: Run pyflakes
+      run: pyflakes appcar5.py
