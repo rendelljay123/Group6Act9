@@ -107,7 +107,7 @@ else:
         # Load the selected model based on the chosen plant type
         model_path = model_paths.get(plant_type)
         if model_path:
-            model = load_model(model_path)
+            model = load_custom_model(model_path)
         else:
             st.text("Invalid plant type")
 
