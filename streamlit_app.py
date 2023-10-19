@@ -1,7 +1,6 @@
 import numpy as np
 import streamlit as st
 import tensorflow as tf
-from keras.models import load_model as keras_load_model
 from PIL import Image, ImageOps
 
 # Set page configuration with background image and gradient
