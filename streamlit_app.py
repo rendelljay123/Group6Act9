@@ -1,7 +1,7 @@
+import numpy as np
 import streamlit as st
 import tensorflow as tf
 from keras.models import load_model as keras_load_model
-import numpy as np
 from PIL import Image, ImageOps
 
 # Set page configuration with background image and gradient
@@ -25,11 +25,13 @@ body {
 """
 
 # Apply CSS to Streamlit
-st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+
 
 def load_custom_model(model_path):
     model = tf.keras.models.load_model(model_path)
     return model
+    
 
 def import_and_predict(image_data, model):
     size = (256, 256)
@@ -39,23 +41,33 @@ def import_and_predict(image_data, model):
     image_reshape = np.reshape(image, (1, 256, 256, 3))
     prediction = model.predict(image_reshape)
     return prediction
+    
 
 # Define model paths for different plant types
 model_paths = {
-    'tomato': './model/Tomato_Model.h5',
-    'cotton': './model/Cotton_Model.h5',
-    'potato': './model/Potato_Model.h5'
+    "tomato': './model/Tomato_Model.h5",
+    "cotton': './model/Cotton_Model.h5",
+    "potato': './model/Potato_Model.h5",
 }
 
 # Load default model for initialization
-default_model_path = './model/Tomato_Model.h5'
+default_model_path = "./model/Tomato_Model.h5"
 model = load_custom_model(default_model_path)
 
 # Define class labels for plant diseases
 class_names = {
-    'tomato': {0: 'Tomato_Early_blight', 1: 'Tomato_Leaf_Mold', 2: 'Tomato_healthy'},
-    'cotton': {0: 'diseased cotton leaf', 1: 'diseased cotton plant', 2: 'fresh cotton leaf', 3: 'fresh cotton plant'},
-    'potato': {0: 'Potato___Early_blight', 1: 'Potato___Late_blight', 2: 'Potato___healthy'}
+    "tomato": {0: "Tomato_Early_blight", 1: "Tomato_Leaf_Mold", 2: "Tomato_healthy"},
+    "cotton": {
+        0: "diseased cotton leaf", 
+        1: "diseased cotton plant", 
+        2: "fresh cotton leaf", 
+        3: "fresh cotton plant"
+    },
+    "potato": {
+        0: "Potato___Early_blight", 
+        1: "Potato___Late_blight", 
+        2: "Potato___healthy"
+    },
 }
 
 st.write("# Plant Disease Detection")
@@ -63,7 +75,7 @@ st.write("### CPE 019 - Emerging Technologies in CpE 3")
 st.write("Baltazar, Rendell Jay; Jarabejo, Joshua; La Madrid, Angelo H.")
 
 # Allow the user to select the plant type
-plant_type = st.selectbox("Select Plant Type", ('tomato', 'cotton', 'potato'))
+plant_type = st.selectbox("Select Plant Type", ("tomato", "cotton", "potato"))
 
 # Allow the user to upload an image
 file = st.file_uploader("Upload an image", type=["jpg", "png"])
