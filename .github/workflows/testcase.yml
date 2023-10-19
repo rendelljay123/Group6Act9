@@ -1,4 +1,4 @@
-name: Syntax Check
+name: Python Syntax Check
 
 on:
   push:
