@@ -1,28 +1,28 @@
-name: Super-Linter
+name: Python Syntax Check
 
-on: push
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name
 
 jobs:
-  super-lint:
-    name: Lint code base
+  syntax-check:
+    name: Check Python Syntax
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Check out code
+      uses: actions/checkout@v2
 
-      - name: Run Super-Linter
-        uses: github/super-linter@v4
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x  # Choose the Python version you want to use
 
-      - name: Merge Pull Request
-        if: success()  # Only run if the Super-Linter check was successful
-        run: |
-          # Fetch the pull request number from the event payload
-          PR_NUMBER=$(jq -r .pull_request.number "$GITHUB_EVENT_PATH")
+    - name: Install dependencies
+      run: pip install -r requirements.txt  # Modify if needed
 
-          # Merge the pull request using the GitHub API
-          curl -X PUT -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          -d '{"merge_method":"merge"}' \
-          "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/merge"
+    - name: Check syntax
+      uses: python/mypy@v1
+      with:
+        args: --ignore-missing-imports .
