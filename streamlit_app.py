@@ -136,3 +136,27 @@ else:
     except Exception as e:
         st.text("Error occurred while processing the image.")
         st.text(str(e))
+
+# Request user feedback
+st.write("## Feedback")
+feedback = st.text_area("Share your feedback or suggestions:", "")
+
+# Ask if the prediction is accurate
+accuracy_feedback = st.radio("Was the prediction accurate?", ["Yes", "No", "Not Sure"])
+
+# Submit feedback button
+if st.button("Submit Feedback"):
+    if feedback:
+        st.success("Thank you for your feedback! We appreciate your input.")
+
+        # Process accuracy feedback
+        if accuracy_feedback == "Yes":
+            st.success("We're glad to hear that the prediction was accurate!")
+        elif accuracy_feedback == "No":
+            st.warning("We apologize for any inaccuracies. Your feedback helps us improve.")
+        else:
+            st.info("Thank you for providing feedback. We'll use it to enhance our model.")
+
+        # You can add additional code here to store or process the feedback as needed.
+    else:
+        st.warning("Please provide your feedback before submitting.")
