@@ -22,4 +22,4 @@ jobs:
       run: pip install pyflakes
 
     - name: Run pyflakes
-      run: pyflakes appcar5.py
+      run: pyflakes streamlit_app.py
