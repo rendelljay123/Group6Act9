@@ -98,10 +98,13 @@ else:
             class_labels = class_names.get(plant_type)
             if class_labels:
                 class_index = np.argmax(prediction)
-                class_name = class_labels.get(class_index)
-                if class_name:
-                    string = f"The {plant_type} plant is {class_name} "
-                    st.success(string)
+                if class_index is not None:
+                    class_name = class_labels.get(class_index)
+                    if class_name:
+                        string = f"The {plant_type} plant is {class_name} "
+                        st.success(string)
+                    else:
+                        st.text("Invalid class index")
                 else:
                     st.text("Invalid class index")
             else:
