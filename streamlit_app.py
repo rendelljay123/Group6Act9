@@ -69,9 +69,30 @@ class_names = {
     },
 }
 
+# Define disease information for each plant type
+disease_info = {
+    'tomato': {
+        'Tomato_Early_blight': "Early blight is a common fungal disease that affects tomato plants...",
+        'Tomato_Leaf_Mold': "Tomato leaf mold is a foliar disease that primarily affects the leaves...",
+        'Tomato_healthy': "Your tomato plant looks healthy!",
+    },
+    'cotton': {
+        'diseased cotton leaf': "Diseased cotton leaves often show symptoms like yellowing and wilting...",
+        'diseased cotton plant': "Cotton plant diseases can lead to reduced yield and fiber quality...",
+        'fresh cotton leaf': "Your cotton leaf appears healthy!",
+        'fresh cotton plant': "Your cotton plant appears healthy!",
+    },
+    'potato': {
+        'Potato___Early_blight': "Early blight in potatoes can cause dark lesions on leaves...",
+        'Potato___Late_blight': "Late blight is a serious disease of potato and tomato crops...",
+        'Potato___healthy': "Your potato plant looks healthy!",
+    }
+}
+
+
 st.write("# Plant Disease Detection")
-st.write("### CPE 019 - Emerging Technologies in CpE 3")
-st.write("Baltazar, Rendell Jay; Jarabejo, Joshua; La Madrid, Angelo H.")
+st.write("### CPE 028 - DevOps")
+st.write("Baltazar, Rendell Jay; Dalmacio, Andre Christian; Makiramdam, Releigh; Orbeta, John Mark; Co, Jericho")
 
 # Allow the user to select the plant type
 plant_type = st.selectbox("Select Plant Type", ("tomato", "cotton", "potato"))
@@ -86,7 +107,7 @@ else:
         # Load the selected model based on the chosen plant type
         model_path = model_paths.get(plant_type)
         if model_path:
-            model = load_custom_model(model_path)
+            model = load_model(model_path)
         else:
             st.text("Invalid plant type")
 
@@ -97,13 +118,15 @@ else:
             class_labels = class_names.get(plant_type)
             if class_labels:
                 class_index = np.argmax(prediction)
-                if class_index is not None:
-                    class_name = class_labels.get(class_index)
-                    if class_name:
-                        string = f"The {plant_type} plant is {class_name} "
-                        st.success(string)
-                    else:
-                        st.text("Invalid class index")
+                class_name = class_labels.get(class_index)
+                if class_name:
+                    string = f"The {plant_type} plant is {class_name}"
+                    st.success(string)
+
+                    # Display disease information in an expander
+                    with st.expander("Learn More About the Disease"):
+                        disease_description = disease_info.get(plant_type, {}).get(class_name, "No information available.")
+                        st.write(disease_description)
                 else:
                     st.text("Invalid class index")
             else:
