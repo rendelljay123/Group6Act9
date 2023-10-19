@@ -72,8 +72,8 @@ class_names = {
 # Define disease information for each plant type
 disease_info = {
     'tomato': {
-        'Tomato_Early_blight': "Early blight is a common fungal disease that affects tomato plants...",
-        'Tomato_Leaf_Mold': "Tomato leaf mold is a foliar disease that primarily affects the leaves...",
+        'Tomato_Early_blight': "Early blight is a common fungal disease that affects tomato plants. Early Blight typically starts as small, dark brown lesions with concentric rings on lower leaves...",
+        'Tomato_Leaf_Mold': "Tomato leaf mold is a foliar disease that primarily affects the leaves. Management of Leaf Mold involves maintaining proper air circulation and reducing humidity levels in greenhouses...",
         'Tomato_healthy': "Your tomato plant looks healthy!",
     },
     'cotton': {
