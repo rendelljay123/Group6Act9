@@ -3,7 +3,7 @@ name: Python Syntax Check
 on:
   push:
     branches:
-      - main  # Change this to your main branch name
+      - main
 
 jobs:
   syntax-check:
@@ -14,13 +14,18 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
+    - name: Set up Python
+      uses: actions/setup-python@v2
       with:
-        node-version: 14  # Choose a suitable Node.js version
+        python-version: 3.x  # Choose the Python version you want to use
 
-    - name: Install Pyright
-      run: npm install -g pyright
+    - name: Set up a virtual environment
+      run: python -m venv venv
+    - name: Activate virtual environment
+      run: source venv/bin/activate
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
 
     - name: Check Python syntax
       run: pyright
