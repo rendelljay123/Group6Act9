@@ -1,12 +1,12 @@
-name: Check
+name: Python Syntax Check
 
 on:
   push:
     branches:
-      - main
+      - main  # Change this to your main branch name
 
 jobs:
-  syntax_check:
+  syntax-check:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,10 +16,10 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: 3.x  # Specify the Python version you want to use (e.g., 3.8, 3.9, etc.)
 
-    - name: Install pyflakes
-      run: pip install pyflakes
+    - name: Install dependencies
+      run: pip install flake8
 
-    - name: Run pyflakes
-      run: pyflakes appcar5.py
+    - name: Check Python syntax
+      run: flake8 .  # This will check the syntax of all Python files in the repository
