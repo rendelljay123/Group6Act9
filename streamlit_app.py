@@ -31,7 +31,8 @@ st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 def load_custom_model(model_path):
     model = tf.keras.models.load_model(model_path)
     return model
-    
+
+
 
 def import_and_predict(image_data, model):
     size = (256, 256)
@@ -41,13 +42,14 @@ def import_and_predict(image_data, model):
     image_reshape = np.reshape(image, (1, 256, 256, 3))
     prediction = model.predict(image_reshape)
     return prediction
-    
+
+
 
 # Define model paths for different plant types
 model_paths = {
-    "tomato': './model/Tomato_Model.h5",
-    "cotton': './model/Cotton_Model.h5",
-    "potato': './model/Potato_Model.h5",
+    "tomato": './model/Tomato_Model.h5',
+    "cotton": './model/Cotton_Model.h5',
+    "potato": './model/Potato_Model.h5',
 }
 
 # Load default model for initialization
