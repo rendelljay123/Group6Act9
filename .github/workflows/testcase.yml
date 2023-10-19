@@ -23,7 +23,4 @@ jobs:
       run: pip install -r requirements.txt  # Modify if needed
 
     - name: Check syntax
-      uses: ms-pyright/pyright@v0
-      with:
-        args: check --outputjson .
-
+      run: python -m pyright .
