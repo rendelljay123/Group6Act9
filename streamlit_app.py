@@ -77,8 +77,8 @@ disease_info = {
         'Tomato_healthy': "Your tomato plant looks healthy!",
     },
     'cotton': {
-    'diseased cotton leaf': "Diseased cotton leaves often show symptoms like yellowing and wilting, which can be caused by various pathogens like Fusarium and Verticillium wilt, leading to a decline in cotton plant health and yield. Regular monitoring of cotton fields for early signs of leaf diseases is crucial for effective disease management.",
-    'diseased cotton plant': "Cotton plant diseases can lead to reduced yield and fiber quality, affecting the overall cotton crop production. These diseases can be exacerbated by environmental conditions such as high humidity and insufficient air circulation. Implementing proper crop rotation, pest control, and maintaining healthy soil can help mitigate the risks associated with cotton plant diseases.",
+    'diseased cotton leaf': "Symptoms of diseased cotton leaves, like yellowing and wilting, are often attributed to various pathogens such as Fusarium and Verticillium wilt, resulting in decreased cotton plant vitality and yield. It's essential to regularly monitor cotton fields for early signs of leaf diseases to effectively manage them.",
+    'diseased cotton plant': "Cotton plant diseases can lead to diminished crop yield and fiber quality, impacting the overall cotton production. These ailments can be exacerbated by environmental factors like high humidity and poor air circulation. Mitigating the risks associated with cotton plant diseases involves implementing practices such as crop rotation, pest control, and ensuring soil health."
     'fresh cotton leaf': "Your cotton leaf appears healthy!",
     'fresh cotton plant': "Your cotton plant appears healthy!",
     },
