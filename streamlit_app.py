@@ -75,9 +75,6 @@ disease_info = {
         'Tomato_Early_blight': "Early blight is a common fungal disease that affects tomato plants...",
         'Tomato_Leaf_Mold': "Tomato leaf mold is a foliar disease that primarily affects the leaves...",
         'Tomato_healthy': "Your tomato plant looks healthy!",
-        'Tomato_Late_Blight': "Late blight is a devastating disease caused by the oomycete pathogen Phytophthora infestans. It affects both foliage and fruit of tomato plants.",
-        'Tomato_Bacterial_Spot': "Bacterial spot is a common disease affecting tomatoes, caused by the bacterium Xanthomonas campestris.",
-        'Tomato_Yellow_Leaf_Curl_Virus': "Tomato yellow leaf curl virus (TYLCV) is a viral disease that affects tomato plants, causing yellowing and curling of the leaves.",
     },
     'cotton': {
     'diseased cotton leaf': "Diseased cotton leaves often show symptoms like yellowing and wilting, which can be caused by various pathogens like Fusarium and Verticillium wilt, leading to a decline in cotton plant health and yield. Regular monitoring of cotton fields for early signs of leaf diseases is crucial for effective disease management.",
@@ -86,9 +83,9 @@ disease_info = {
     'fresh cotton plant': "Your cotton plant appears healthy!",
     },
     'potato': {
-        'Potato___Early_blight': "Early blight in potatoes can cause dark lesions on leaves...",
-        'Potato___Late_blight': "Late blight is a serious disease of potato and tomato crops...",
-        'Potato___healthy': "Your potato plant looks healthy!",
+        'Potato___Early_blight': "Early blight in potatoes can cause dark lesions on leaves. It is primarily caused by the fungus Alternaria solani. The symptoms include small, dark spots with concentric rings that may merge as the disease progresses. ",
+        'Potato___Late_blight': "Late blight is a serious disease of potato and tomato crops. Late blight symptoms include water-soaked lesions on leaves, which can rapidly enlarge and become necrotic. Infected plants may exhibit a foul odor.",
+        'Potato___healthy': "Your potato plant looks healthy! Maintain your potato plant's health by adhering to good agricultural practices, which involve proper irrigation, fertilization, and vigilant monitoring for signs of pests or diseases. Regularly inspect the foliage, apply organic fungicides.",
     }
 }
 
