@@ -16,19 +16,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Run Super-Linter
-      uses: github/super-linter@3.17.0
-      env:
-        DEFAULT_BRANCH: main
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Set up Python
+      uses: github/super-linter@v4
+      with:
+        python-version: 3.8
 
-    #- name: Set up Python
-     # uses: github/super-linter@v4
-      #with:
-       # python-version: 3.8
+    - name: Install pyflakes
+      run: pip install pyflakes
 
-    #- name: Install pyflakes
-      #run: pip install pyflakes
-
-    #- name: Run pyflakes
-     # run: pyflakes streamlit_app.py
+    - name: Run pyflakes
+      run: pyflakes streamlit_app.py
